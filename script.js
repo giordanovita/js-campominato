@@ -25,9 +25,8 @@ var esperto = document.getElementById('Esperto');
 
 var campione = document.getElementById('Campione');
 
-
-
-principiante.addEventListener('click', function(){
+ 
+ principiante.addEventListener('click', function(){
   botNumbersGeneretor()
   playerInteractions();
 
@@ -35,21 +34,19 @@ principiante.addEventListener('click', function(){
 })
 
 esperto.addEventListener('click', function(){
-  botNumbersGeneretor(botRndnumbers = Math.round(Math.random() * 80 )+1
-  );
+  botNumbersGeneretor(botRndnumbers = Math.round(Math.random() * 80 )+1);
   playerInteractionsFirstlevel();
 
 
 })
 
 campione.addEventListener('click', function(){
-  botNumbersGeneretor(botRndnumbers = Math.round(Math.random() * 50 )+1
-  );
-  playerInteractionsSecondLevel();
+  botNumbersGeneretor(botRndnumbers = Math.round(Math.random() * 50 )+1);
+  playerInteractionsSecondLevel() ;
 
 
 })
-
+ 
 
 var botNumbers = [];  //array composto dai numeri del gioco che determinano la sconfitta
 var playerNumbers = []; //array composto dai numeri inseriti dal giocatore con lo scopo di non incontrare i numeri  del computer
@@ -59,7 +56,7 @@ function botNumbersGeneretor(){
   for (var i = 0; i < 16; i++) {
   
     var botRndnumbers = Math.round(Math.random() * 100 )+1;
-
+    
         if ( botNumbers.includes(botRndnumbers) ) {
 
           i--;
@@ -73,10 +70,9 @@ function botNumbersGeneretor(){
 }
 
 //level 0
-function playerInteractions() {
+function playerInteractions(chances) {
 
     var score = 0; //punteggio del giocatore
-
 
       for (var i = 0; i < (100 - 16); i++) {
 
@@ -100,9 +96,9 @@ function playerInteractions() {
 
         if (botNumbers.includes(playerRndNumbers)) {
 
-          alert("Hai perso! Il tuo punteggio totale: " + score + ' alla difficoltà Principiante');
+          alert("Hai perso! Il tuo punteggio totale: " + score);
           var loserNumber = playerNumbers.pop();
-          console.log("Hai perso! Il tuo punteggio totale: " + score + " Numero sbagliato: " + loserNumber);
+          console.log("Hai perso! Il tuo punteggio totale: " + score + " Numero sbagliato: " + loserNumber, chances);
             return false;
 
         } else {
@@ -120,7 +116,7 @@ function playerInteractions() {
 
 //level 1
 
-function playerInteractionsFirstlevel() {
+  function playerInteractionsFirstlevel() {
 
   var score = 0; //punteggio del giocatore
 
@@ -162,9 +158,8 @@ function playerInteractionsFirstlevel() {
 
 }
 
-
 //level 2
-function playerInteractionsSecondLevel() {
+ function playerInteractionsSecondLevel() {
 
   var score = 0; //punteggio del giocatore
 
