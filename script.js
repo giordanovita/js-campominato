@@ -25,6 +25,8 @@ var esperto = document.getElementById('Esperto');
 
 var campione = document.getElementById('Campione');
 
+
+
 principiante.addEventListener('click', function(){
   botNumbersGeneretor()
   playerInteractions();
@@ -33,14 +35,16 @@ principiante.addEventListener('click', function(){
 })
 
 esperto.addEventListener('click', function(){
-  botNumbersGeneretor()
+  botNumbersGeneretor(botRndnumbers = Math.round(Math.random() * 80 )+1
+  );
   playerInteractionsFirstlevel();
 
 
 })
 
 campione.addEventListener('click', function(){
-  botNumbersGeneretor()
+  botNumbersGeneretor(botRndnumbers = Math.round(Math.random() * 50 )+1
+  );
   playerInteractionsSecondLevel();
 
 
@@ -53,18 +57,18 @@ var playerNumbers = []; //array composto dai numeri inseriti dal giocatore con l
 function botNumbersGeneretor(){
 
   for (var i = 0; i < 16; i++) {
-
+  
     var botRndnumbers = Math.round(Math.random() * 100 )+1;
 
-    if ( botNumbers.includes(botRndnumbers) ) {
+        if ( botNumbers.includes(botRndnumbers) ) {
 
-      i--;
-      
-    } else {
+          i--;
+          
+        } else {
 
-      botNumbers.push(botRndnumbers);
+          botNumbers.push(botRndnumbers);
 
-    }
+        }
   }
 }
 
@@ -74,13 +78,15 @@ function playerInteractions() {
     var score = 0; //punteggio del giocatore
 
 
-    for (var i = 0; i < (100 - 16); i++) {
+      for (var i = 0; i < (100 - 16); i++) {
 
-      var playerRndNumbers = parseInt(prompt("Inserisci un numero da 1 a 100"));
+        
 
-      if (playerNumbers.includes(playerRndNumbers)) {
+        var playerRndNumbers = parseInt(prompt("Inserisci un numero da 1 a 100"));
 
-        i--;
+        if (playerNumbers.includes(playerRndNumbers)) {
+
+          i--;
 
         alert("Non puoi inserire due volte lo stesso numero! Attenzione!");
 
@@ -95,15 +101,8 @@ function playerInteractions() {
         if (botNumbers.includes(playerRndNumbers)) {
 
           alert("Hai perso! Il tuo punteggio totale: " + score + ' alla difficoltà Principiante');
-
-          console.log("Hai perso! Il tuo punteggio totale: " + score);
-
           var loserNumber = playerNumbers.pop();
-
-          console.log(playerNumbers);
-
-          console.log("Numero sbagliato: " + loserNumber);
-
+          console.log("Hai perso! Il tuo punteggio totale: " + score + " Numero sbagliato: " + loserNumber);
             return false;
 
         } else {
@@ -113,10 +112,8 @@ function playerInteractions() {
         }
 
       }
-
-    }
- 
   }
+}
 
 
 
@@ -130,7 +127,7 @@ function playerInteractionsFirstlevel() {
 
   for (var i = 0; i < (80 - 16); i++) {
 
-    var playerRndNumbers = parseInt(prompt("Inserisci un numero da 1 a 100"));
+    var playerRndNumbers = parseInt(prompt("Inserisci un numero da 1 a 80"));
 
     if (playerNumbers.includes(playerRndNumbers)) {
 
@@ -138,8 +135,8 @@ function playerInteractionsFirstlevel() {
 
       alert("Non puoi inserire due volte lo stesso numero! Attenzione!");
 
-    }else if(playerNumbers>100){
-        alert("Ho detto da 1 a 100!!!!")
+    }else if(playerNumbers>80){
+        alert("Ho detto da 1 a 80!!!!")
     }
     
     else {
@@ -149,15 +146,8 @@ function playerInteractionsFirstlevel() {
       if (botNumbers.includes(playerRndNumbers)) {
 
         alert("Hai perso! Il tuo punteggio totale: " + score + ' alla difficoltà Esperto');
-
-        console.log("Hai perso! Il tuo punteggio totale: " + score);
-
         var loserNumber = playerNumbers.pop();
-
-        console.log(playerNumbers);
-
-        console.log("Numero sbagliato: " + loserNumber);
-
+        console.log("Hai perso! Il tuo punteggio totale: " + score + " Numero sbagliato: " + loserNumber);
           return false;
 
       } else {
@@ -181,7 +171,7 @@ function playerInteractionsSecondLevel() {
 
   for (var i = 0; i < (50 - 16); i++) {
 
-    var playerRndNumbers = parseInt(prompt("Inserisci un numero da 1 a 100"));
+    var playerRndNumbers = parseInt(prompt("Inserisci un numero da 1 a 50"));
 
     if (playerNumbers.includes(playerRndNumbers)) {
 
@@ -189,8 +179,8 @@ function playerInteractionsSecondLevel() {
 
       alert("Non puoi inserire due volte lo stesso numero! Attenzione!");
 
-    }else if(playerNumbers>100){
-        alert("Ho detto da 1 a 100!!!!")
+    }else if(playerNumbers>50){
+        alert("Ho detto da 1 a 50!!!!")
     }
     
     else {
@@ -200,15 +190,8 @@ function playerInteractionsSecondLevel() {
       if (botNumbers.includes(playerRndNumbers)) {
 
         alert("Hai perso! Il tuo punteggio totale: " + score + ' alla difficoltà Campione');
-
-        console.log("Hai perso! Il tuo punteggio totale: " + score);
-
         var loserNumber = playerNumbers.pop();
-
-        console.log(playerNumbers);
-
-        console.log("Numero sbagliato: " + loserNumber);
-
+        console.log("Hai perso! Il tuo punteggio totale: " + score + " Numero sbagliato: " + loserNumber);
           return false;
 
       } else {
