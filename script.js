@@ -98,11 +98,11 @@ function playerInteractions() {
 
           console.log("Hai perso! Il tuo punteggio totale: " + score);
 
-          var lastCorrectNumb = playerNumbers.pop();
+          var loserNumber = playerNumbers.pop();
 
           console.log(playerNumbers);
 
-          console.log("Numero sbagliato: " + lastCorrectNumb);
+          console.log("Numero sbagliato: " + loserNumber);
 
             return false;
 
@@ -152,11 +152,11 @@ function playerInteractionsFirstlevel() {
 
         console.log("Hai perso! Il tuo punteggio totale: " + score);
 
-        var lastCorrectNumb = playerNumbers.pop();
+        var loserNumber = playerNumbers.pop();
 
         console.log(playerNumbers);
 
-        console.log("Numero sbagliato: " + lastCorrectNumb);
+        console.log("Numero sbagliato: " + loserNumber);
 
           return false;
 
@@ -203,11 +203,11 @@ function playerInteractionsSecondLevel() {
 
         console.log("Hai perso! Il tuo punteggio totale: " + score);
 
-        var lastCorrectNumb = playerNumbers.pop();
+        var loserNumber = playerNumbers.pop();
 
         console.log(playerNumbers);
 
-        console.log("Numero sbagliato: " + lastCorrectNumb);
+        console.log("Numero sbagliato: " + loserNumber);
 
           return false;
 
