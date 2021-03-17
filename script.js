@@ -131,7 +131,7 @@ function playerInteractions(chances) {
 
       alert("Non puoi inserire due volte lo stesso numero! Attenzione!");
 
-    }else if(playerNumbers>80){
+    }else if(playerNumbers>80 || playerNumbers<1){
         alert("Ho detto da 1 a 80!!!!")
     }
     
